@@ -100,6 +100,7 @@ jobs:
       env:
         TNAME: RM2100
       run: |
+        cd /opt/rt-n56u/trunk
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
         sudo mv -f images/*.trx /opt/images/
