@@ -51,7 +51,8 @@ jobs:
       run: |
         #########################################################################################
         #更新Adguardhome二进制文件
-        cd /opt/rt-n56u/trunk/user/adguardhome | rm AdGuardHome
+        cd /opt/rt-n56u/trunk/user/adguardhome
+        rm AdGuardHome
         wget https://github.com/AdguardTeam/AdGuardHome/releases/download/\
         $(curl -Ls "https://api.github.com/repos/AdguardTeam/AdGuardHome/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')\
         /AdGuardHome_linux_mipsle_softfloat.tar.gz -O agh.tar.gz
