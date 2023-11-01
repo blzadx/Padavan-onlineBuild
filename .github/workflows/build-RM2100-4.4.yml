@@ -55,7 +55,7 @@ jobs:
         rm AdGuardHome
         wget https://github.com/AdguardTeam/AdGuardHome/releases/download/\
         $(curl -Ls "https://api.github.com/repos/AdguardTeam/AdGuardHome/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')\
-        /AdGuardHome_linux_mipsle_softfloat.tar.gz -O agh.tar.gz
+        /AdGuardHome_linux_mipsle_softfloat.tar.gz -qO agh.tar.gz
         tar -zxf agh.tar.gz
         #########################################################################################
         #配置路由器基础信息
