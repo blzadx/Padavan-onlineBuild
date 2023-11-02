@@ -56,6 +56,9 @@ jobs:
         $(curl -Ls "https://api.github.com/repos/AdguardTeam/AdGuardHome/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')\
         /AdGuardHome_linux_mipsle_softfloat.tar.gz -qO agh.tar.gz
         tar -xf agh.tar.gz -C ./ --strip-components=2 ./AdGuardHome/AdGuardHome
+        #修改adguardhome.sh脚本
+        sed -i '/\"\/tmp\/AdGuardHome\/AdGuardHome\"/{N;N;d;}' adguardhome.sh
+        sed -i 's/\/tmp\/AdGuardHome\/AdGuardHome/\/usr\/bin\/Adguardhome/g' adguardhome.sh
         #########################################################################################
         #配置路由器基础信息
         cd /opt/rt-n56u/trunk/user/shared
