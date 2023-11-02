@@ -58,7 +58,7 @@ jobs:
         tar -xf agh.tar.gz -C ./ --strip-components=2 ./AdGuardHome/AdGuardHome
         #修改adguardhome.sh脚本
         sed -i '/\"\/tmp\/AdGuardHome\/AdGuardHome\"/{N;N;d;}' adguardhome.sh
-        sed -i 's/\/tmp\/AdGuardHome\/AdGuardHome/\/usr\/bin\/Adguardhome/g' adguardhome.sh
+        sed -i 's/\/tmp\/AdGuardHome\/AdGuardHome/\/usr\/bin\/AdGuardHome/g' adguardhome.sh
         #########################################################################################
         #配置路由器基础信息
         cd /opt/rt-n56u/trunk/user/shared
